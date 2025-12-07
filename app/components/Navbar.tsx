@@ -25,7 +25,7 @@ export default function Navbar() {
                         </a>
                     ))}
 
-                    <a href="/resume.pdf" className="btn-primary btn rounded-xl py-1 px-2 ml-4 text-sm">
+                    <a href="/resume.docx" className="btn-primary btn rounded-xl py-1 px-2 ml-4 text-sm">
                         Resume
                     </a>
                 </div>

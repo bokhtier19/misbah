@@ -10,7 +10,7 @@ export default function Documents() {
             </ul>
 
             <div className="mt-6">
-                <a href="/resume.pdf" className="btn btn-primary">
+                <a href="/resume.docx" className="btn btn-primary">
                     View Resume (PDF)
                 </a>
             </div>
