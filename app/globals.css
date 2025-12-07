@@ -1,26 +1,159 @@
 @import "tailwindcss";
 
+/* ---------------------------
+   Linear-like Minimal Theme
+   --------------------------- */
+/* Color tokens */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --bg: #ffffff;
+    --muted-bg: #f8fafc;
+    --text: #0f1724;
+    --muted: #6b7280;
+
+    --primary: #2563eb; /* blue-600 */
+    --primary-600: #1e40af; /* blue-800 */
+    --surface: #ffffff;
+    --card-shadow: rgba(15, 23, 36, 0.06);
+
+    --radius: 0.75rem;
+    --container: 68rem; /* ~max-w-5xl */
+    --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+
+    --font-body: "Inter", sans-serif;
+    --font-heading: "Sora", sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@import "tailwindcss";
+
+/* -------------------------
+   Tailwind v4 Theme Tokens
+   ------------------------- */
+@theme {
+    --color-primary: #2563eb;
+    --color-primary-dark: #1e40af;
+    --color-text: #0f1724;
+    --color-muted: #6b7280;
+    --color-surface: #ffffff;
+    --color-accent: #e6f0ff;
+
+    --radius-base: 0.75rem;
+
+    --font-sans: Inter, system-ui, sans-serif;
+    --font-heading: Sora, system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Base */
+html,
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+}
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+    font-family: var(--font-body);
+}
+
+/* Container */
+.container {
+    max-width: var(--container);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.6rem 1rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.08);
+}
+.btn-ghost {
+    background: transparent;
+    color: var(--primary);
+    border: 1px solid transparent;
+}
+
+/* Card utility - minimal */
+.case {
+    background: var(--primary);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    box-shadow: 0 8px 24px var(--card-shadow);
+    transition: transform 0.16s ease, box-shadow 0.16s ease;
+}
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 36px rgba(37, 99, 235, 0.08);
+}
+
+/* Tag/chips */
+.chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.35rem 0.75rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    background: #f1f8ff;
+}
+
+/* Nav link underline micro effect */
+.nav-link {
+    position: relative;
+    padding-bottom: 2px;
+    display: inline-block;
+}
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0%;
+    background: var(--primary);
+    transition: width 0.18s ease;
+    border-radius: 2px;
+}
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* anchor spacing fix */
+section {
+    scroll-margin-top: 96px;
+}
+
+/* responsive hero photo */
+.hero-photo {
+    width: 160px;
+    height: 160px;
+    border-radius: 9999px;
+    object-fit: cover;
+    box-shadow: 0 8px 28px rgba(15, 23, 36, 0.08);
+}
+
+/* small helpers */
+.text-muted {
+    color: var(--muted);
+}
+.small {
+    font-size: 0.94rem;
+}
+
+html {
+    scroll-behavior: smooth;
 }
