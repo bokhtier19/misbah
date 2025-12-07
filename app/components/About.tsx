@@ -3,7 +3,7 @@ import { Pointer } from "lucide-react";
 export default function About() {
     return (
         <section id="about" className="py-24">
-            <div className="flex items-center justify-center">
+            <div className="flex flex-col md:flex-row items-center justify-center">
                 {/* LEFT — TEXT */}
                 <div className="flex-1 gap-16 items-center flex flex-col">
                     <h2 className="text-3xl font-bold mb-6">About Me</h2>
