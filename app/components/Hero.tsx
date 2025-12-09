@@ -1,3 +1,5 @@
+import { Download } from "lucide-react";
+
 export default function Hero() {
     return (
         <section id="home" className="py-20 h-[90vh]">
@@ -14,7 +16,7 @@ export default function Hero() {
 
                 <div className="flex gap-4">
                     <a href="/resume.pdf" className="btn btn-primary">
-                        Download Resume
+                        <Download /> Resume
                     </a>
                     <a href="#contact" className="btn  border-2 border-primary rounded-2xl">
                         Contact

@@ -12,7 +12,7 @@ export default function Navbar() {
     const [open, setOpen] = useState(false);
 
     return (
-        <nav className="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-sm">
+        <nav className="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-sm shadow-2xl">
             <div className="container flex items-center justify-between h-16">
                 <a href="#home" className="text-xl text-blue-600 font-semibold">
                     Misbaur
